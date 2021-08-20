@@ -1,0 +1,42 @@
+﻿@model IEnumerable<AdminUserListingServiceModel>
+
+@{
+    ViewData["Title"] = "User Administration";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                UserName
+            </th>
+            <th>
+                E-mail
+
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <th>
+                    @user.UserName
+                </th>
+                <th>
+                    @user.Email
+                </th>
+                <th>
+                    <a  class="btn btn-success" asp-controller="Users" asp-action="Orders" asp-route-id="@user.Id">User Orders</a>    
+                </th>
+            </tr>
+        }
+    </tbody>
+ 
+</table>
+

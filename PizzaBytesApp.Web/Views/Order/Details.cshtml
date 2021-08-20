@@ -1,0 +1,70 @@
+﻿@model OrderDetailsViewModel
+@{
+    ViewData["Title"] = "Details";
+}
+<h2>Order Details</h2>
+<div class="col-md-4">
+    
+    <table class="table table-bordered table-hover">
+ 
+        <thead>
+            <tr>
+                <th>
+
+                </th>
+                <th>
+                   Pizza Name
+                </th>
+                <th>
+                   Total Price
+                </th>
+                <th>
+                    Type
+                </th>
+                <th>
+                    Note
+                </th>
+                <th>
+                    Quantity
+                </th>
+                <th>
+                    Ordered At
+                </th>
+                <th>
+                    Delivering To:
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>   
+                <th>
+                    <div>
+                        <img src="@Model.Order.ImgUrl" alt="Pizza" height="200" width="200" />
+                    </div>
+                </th>
+                <th>
+                    @Model.Order.PizzaName
+                </th>
+
+                <th>
+                    @Model.Order.TotalPrice$
+                </th>
+                <th>
+                    @Model.Order.Type
+                </th>
+                <th>
+                    @Model.Order.Note
+                </th>
+                <th>
+                    @Model.Order.Quantity
+                </th>
+                <th>
+                    @Model.Order.OrderedAt
+                </th>
+                <th>
+                    @Model.Order.DeliveryAdress
+                </th>
+        </tr>
+    </tbody>
+</table>
+</div>

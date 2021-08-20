@@ -1,0 +1,50 @@
+﻿@model IEnumerable<PizzaListingServiceModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Pizza Menu</h2>
+
+
+ 
+ 
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>
+
+                </th>
+                <th>
+                    Name
+                </th>
+
+                <th>
+                    Price
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var pizza in Model)
+            {
+                <tr>
+                    <th>
+                        <div class="col-md-9">
+                            <img src="@pizza.ImgUrl" alt="Pizza" width="300" height="300" />
+                        </div>
+
+                    </th>
+                    <th>
+                        @pizza.Name
+                    </th>
+
+                    <th>
+
+                        <a class="btn btn-success" asp-controller="Pizza" asp-action="Details" asp-route-id="@pizza.Id">Pizza Details!</a>
+
+                    </th>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+ 

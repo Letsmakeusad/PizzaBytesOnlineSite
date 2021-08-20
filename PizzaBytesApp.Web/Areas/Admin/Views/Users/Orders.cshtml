@@ -1,0 +1,49 @@
+﻿@model IEnumerable<AdminUserOrderListingServiceModel>
+@{
+    ViewData["Title"] = "Orders";
+}
+
+<h2>User's Orders</h2>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                Receiver's Name
+            </th>
+            <th>
+                Pizza's Name
+            </th>
+            <th>
+               Ordered At
+            </th>
+            <th>
+                Total Price
+            </th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var order in Model)
+        {
+            <tr>
+                <th>
+                    @order.UserName
+                </th>
+                 <th>
+                     @order.PizzaName
+                 </th>
+                <th>
+                    @order.OrderedAt
+                </th>
+                <th>
+                    @order.TotalPrice$
+                </th>
+                
+            </tr>
+
+        }
+    </tbody>
+
+</table>
+
+

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<AdminPizzaListingServiceModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        <li><a class="btn btn-success" asp-area="Admin" asp-controller="Pizzas" asp-action="Create">Add Pizza To The Menu</a></li>
+    </ul>
+</div>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pizza in Model)
+        {
+            <tr>          
+                <th>
+                    <img src="@pizza.ImgUrl" alt="Pizza" width="300" height="300"/>
+                </th>
+                <th>
+                    @pizza.Name
+                </th>
+                <th>
+                    @pizza.Description
+                </th>
+                <th>
+                    @pizza.Price$
+                </th>
+                <th>
+                    <a class="btn btn-warning" asp-controller="Pizzas" asp-action="Edit" asp-route-id="@pizza.Id">Edit Pizza</a> 
+                </th>
+                <th>
+                    <a class="btn btn-danger" asp-controller="Pizzas" asp-action="Delete" asp-route-id="@pizza.Id">Delete Pizza</a>
+                </th>
+            </tr>
+        }
+    </tbody>
+
+</table>

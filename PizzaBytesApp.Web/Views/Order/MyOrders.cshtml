@@ -1,0 +1,46 @@
+﻿@model IEnumerable<OrderListingServiceModel>
+@{
+    ViewData["Title"] = "MyOrders";
+}
+
+<h2>MyOrders</h2>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+
+            </th>    
+            <th>
+               Ordered At
+            </th>
+            <th>
+                Total Price
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pizza in Model)
+        {
+            <tr>
+                <th>
+                    <img src="@pizza.ImgUrl" alt="Pizza" width="150" height="150"/>
+                </th>  
+               
+                <th>
+                    @pizza.OrderedAt
+                </th>
+                <th>
+                    @pizza.TotalPrice$
+                </th>
+                <th>
+                    <a asp-controller="Order" asp-action="details" asp-route-id="@pizza.Id">More Info!</a>    
+                </th>
+            </tr>
+            
+        }
+    </tbody>
+
+</table>

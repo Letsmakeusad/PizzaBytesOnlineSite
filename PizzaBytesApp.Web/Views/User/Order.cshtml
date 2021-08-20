@@ -1,0 +1,35 @@
+﻿@model AddUserOrderFormModel
+@{
+    ViewData["Title"] = "Details";
+}
+<h2>Pizza Ordering Details</h2>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">      
+            <div class="form-group">
+                <label asp-for="Pizza.Type"></label>
+                <select>
+                    @foreach (var enumValue in Enum.GetValues(typeof(PizzaType)).Cast<PizzaType>())
+                    {
+                        @*<input type="checkbox" name="@nameof(Pizza.Type)s" value="@((int)enumValue)" /> @: @enumValue.ToString()
+                            }*@
+                        <option value="@((int)enumValue)" />@: @enumValue.ToString()</options>
+                     }
+                </select>
+                <span asp-validation-for="Pizza.Type" class="text-danger"></span>
+            </div>
+            <div>
+
+                <label asp-for="Pizza"></label>
+                
+                 
+                <span asp-validation-for="Pizza" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pizza.Quantity"></label>
+                <input asp-for="Pizza.Quantity" class="form-control" />
+                <span asp-validation-for="Pizza.Quantity" class="text-danger"></span>
+            </div>
+        </form>
+    </div>
+</div>
